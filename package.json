@@ -1,0 +1,38 @@
+{
+  "name": "typescript-express-templates",
+  "version": "1.1.0",
+  "scripts": {
+    "checkcode": "eslint -c .eslintrc.js \"./src/**/*.ts\" && tsc --noEmit",
+    "dev": "ts-node-dev -r tsconfig-paths/register ./src/server.ts",
+    "start": "npx ts-node -r tsconfig-paths/register ./src/server.ts",
+    "build": "rm -rf dist && npx ts-node -r tsconfig-paths/register --transpile-only build.ts",
+    "deploy": "cross-env NODE_ENV=production node dist/server.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@szhou/beauty-logger": "^5.3.12",
+    "body-parser": "^1.20.2",
+    "express": "^4.16.4",
+    "ollama-node": "^0.1.28",
+    "parameter": "^3.6.0",
+    "ws": "^7.4.0"
+  },
+  "devDependencies": {
+    "@szhou/eslint-config": "^1.4.10",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.0",
+    "@types/node": "^18.11.9",
+    "@types/parameter": "^3.6.2",
+    "@types/ws": "^8.5.3",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.1",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "4.6.4"
+  },
+  "repository": "https://github.com/zhoushoujian/typescript-express-templates",
+  "ts-node": {
+    "transpileOnly": true
+  }
+}
